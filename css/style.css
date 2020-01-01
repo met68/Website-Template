@@ -53,7 +53,6 @@ body {
   L A Y O U T
  */
 header, section, footer {
-  margin: 0px;
   width: 100%;
   padding: 2rem;
 }
@@ -89,11 +88,11 @@ footer {
 }
 
 .banner {
-  margin: 0 auto;
+  margin: 0px auto;
   text-align: center;
   width: 100%;
   min-height: calc(100vh - 261px);
-  padding: 6rem 3rem;
+/*  padding: 6rem 3rem;*/
 }
 
 /*
@@ -110,6 +109,28 @@ footer {
 /*
   N A V I G A T I O N
  */
+nav > ul, nav > ul > li {
+  margin: 0px;
+  padding: 0px; /* Important to override 40px left padding by Chrome user-agent */
+}
+
+/* Sticky Navigation Menu */
+nav {
+  margin: 0px!important;
+  padding: 0px!important;
+  overflow: hidden;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;  
+  top: 0;
+  background-color: white;
+  z-index: 9999!important;
+}
+
+ul.grid-container {
+  padding: 0px;
+}
+
+/* Navigation Menu CSS */
 .nav, #menu {
   display: none;
   align-self: center;
@@ -126,6 +147,7 @@ footer {
 }
 
 li.nav a, li#menu a {
+  margin: 0px;
   text-decoration: none;
   display: block;
   color: var(----button-primary-color);  
@@ -141,11 +163,6 @@ li.nav a:hover, li#menu a:hover {
 
 #menu {
   display: block;
-}
-
-nav > ul, nav > ul > li {
-  margin: 0px;
-  padding: 0px; /* Important to override 40px left padding by Chrome user-agent */
 }
 
 /*
