@@ -1,0 +1,248 @@
+/*
+
+  B A S I C   C S S 3   S T A R T E R   T E M P L A T E
+
+  Copyright 2020 | Mark E. Tschudin
+  Licence: Opensource MIT Licence;
+
+  Credits: Template is based on Barebones CSS & Skeleton CSS frameworks
+
+  SAMPLE COLOR SCHEME:
+  Primary color: #ff6f61 or rgb(255, 111, 97) or hsl(5, 100%, 69%)
+  Complementary color: #61f2ff or rgb(97, 242, 255) or hsl(185, 100%, 69%)
+  Secondary color: #ff412e or hsl(5, 100%, 59%)
+ 
+*/
+
+
+/*
+  C U S T O M   C O L O R S
+ */
+:root {
+  --complementary: #61f2ff;
+  --complementary-darker: #00eaff;
+  --secondary: #ff412e;
+  --light-grey: #F8F8F8;
+  --darker-grey: #DCDCDC;
+}
+
+
+/*
+  H T M L / B O D Y
+ */
+* {
+  box-sizing: border-box;
+}
+
+/* Override Barebones default colors & max-width */
+html {
+  /* Barebobes default: 194 */
+  --accent-hue: 5;   
+  /* Barebobes default: hsl(var(--accent-hue), 86%, 57%) */  
+  --accent-color: hsl(var(--accent-hue), 100%, 69%); 
+
+  --grid-max-width: 1200px;
+}
+
+body {
+  /* Override 8px default margin set by Chrome user-agent */
+  margin: 0px; 
+}
+
+/*
+  L A Y O U T
+ */
+header, section, footer {
+  margin: 0px;
+  width: 100%;
+  padding: 2rem;
+}
+
+header {
+  background-color: white;
+}
+
+section {
+  text-align: justify;
+}
+
+.container {
+  display: block;
+  margin: 0px auto;
+  width: 100%;
+  max-width: var(--grid-max-width);
+  padding: 25px 0;
+  min-height: calc(100vh - 254px);
+  background-color: white;
+}
+
+footer {
+  margin: 0px;
+  padding: 1.5rem;
+  color: var(--button-primary-color);
+  background-color: var(--accent-color);
+  font-weight: 300;
+}
+
+.products {
+  padding: 2rem;
+}
+
+.banner {
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+  min-height: calc(100vh - 261px);
+  padding: 6rem 3rem;
+}
+
+/*
+  O V E R R I D E   B A R E B O N E S   C S S   G R I D   D E F A U L T S
+ */
+.grid-container {
+  display: grid;
+  padding: 1rem;
+  text-align: center;
+  grid-gap: 3rem;
+  gap: 3rem;
+}
+
+/*
+  N A V I G A T I O N
+ */
+.nav, #menu {
+  display: none;
+  align-self: center;
+  list-style-type: none;
+  width: 100%;
+  font-weight: 300;
+  text-align: center;
+  background-color: var(--accent-color);
+  color: var(--button-primary-color);
+}
+
+.nav:not(:last-child) {
+  border-right: 1px solid white;
+}
+
+li.nav a, li#menu a {
+  text-decoration: none;
+  display: block;
+  color: var(----button-primary-color);  
+  padding: 1.5rem;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+li.nav a:hover, li#menu a:hover {
+  background-color: var(--accent-color-hover);
+  color: var(--button-primary-color);
+}
+
+#menu {
+  display: block;
+}
+
+nav > ul, nav > ul > li {
+  margin: 0px;
+  padding: 0px; /* Important to override 40px left padding by Chrome user-agent */
+}
+
+/*
+  C A R D S
+ */
+.card {
+  margin: 1rem auto;
+  padding: 2rem;
+  display: block;
+  width: 100%;
+  text-align: justify;
+  border: 1px solid var(--darker-grey);
+  border-radius: 2rem;
+}
+
+.card > h3 {
+  color: var(--accent-color);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/*
+  B U T T O N S
+ */
+
+
+/*
+  M I S C E L A N O U S
+ */
+.lead {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
+hr {
+  margin-top: 2rem;
+  border-top: 1px solid var(--complementary-darker);
+  width: 62%;
+}
+
+/*
+  U T I L I T Y   C L A S S E S
+ */
+.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.no-gap {
+  grid-gap: 0px;
+}
+
+.primary {
+  background-color: var(--primary);
+}
+
+.complementary {
+  background-color: var(--complementary);
+}
+
+.secondary {
+  background-color: var(--secondary);
+}
+
+.primary-text {
+  color: var(--primary);
+}
+
+.complementary-text {
+  color: var(--complementary);
+}
+
+.secondary-text {
+  color: var(--secondary);
+}
+
+.text-white {
+  color: white;
+}
+
+/*
+  M E D I A   Q U E R I E S
+ */
+@media (min-width: 920px) {
+  .columns {
+    margin: 0;
+    column-count: 3;
+    column-gap: 5rem;
+  }
+  #menu {
+    display: none;
+  }
+  .nav {
+    display: block;
+  }
+  .container {
+/*    width: calc(62% + 2rem);*/
+    width: 100%;
+  }
+}
